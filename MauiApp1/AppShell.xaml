@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp1"
+    xmlns:custom="clr-namespace:MauiApp1.Custom"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MauiApp1">
+
+
+
+    <custom:CustomTabBar CenterViewText="+"
+                    CenterViewVisible="True"
+                    CenterViewBackgroundColor="Red"
+                    CenterViewCommand="{Binding CenterViewCommand}">
+        <!-- <local:CustomTabBar.CenterViewImageSource> -->
+        <!--    <FileImageSource File="dotnet_bot.png"></FileImageSource> -->
+        <!-- </local:CustomTabBar.CenterViewImageSource> -->
+        <Tab Title="Tab1" Icon="dotnet_bot.png">
+            <ShellContent
+            Title="Page1"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="Page1" />
+        </Tab>
+        <Tab Title="Tab2" Icon="dotnet_bot.png">
+            <ShellContent
+            Title="Page2"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="Page2" />
+        </Tab>
+    </custom:CustomTabBar>
+
+    <ShellContent
+     Title="Home"
+     ContentTemplate="{DataTemplate local:MainPage}"
+     Route="MainPage" />
+</Shell>
